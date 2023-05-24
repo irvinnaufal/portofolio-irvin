@@ -5,9 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="dist/output.css" rel="stylesheet" />
-    <title>Document</title>
+    <title>Portofolio Irvin</title>
+    <link rel="icon" type="image/x-icon" href="https://www.favicon.cc/logo3d/961355.png">
   </head>
-
+  <script>
+    if (
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  </script>
   <body>
     <!-- Header Start-->
     <header
@@ -466,7 +477,10 @@
             </p>
           </div>
         </div>
-        <form method="post" action="https://forms.un-static.com/forms/8663d9f1a01e025dde681e1b0d478768a709209c">
+        <form
+          method="post"
+          action="https://forms.un-static.com/forms/8663d9f1a01e025dde681e1b0d478768a709209c"
+        >
           <div class="lg:2/3 mx-auto w-full">
             <div class="mb-8 w-full px-4">
               <label for="inputName" class="text-base font-bold text-primary"

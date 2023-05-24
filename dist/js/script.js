@@ -8,7 +8,7 @@ window.onscroll = function () {
     navbar.classList.add("sticky");
     totop.classList.remove("hidden");
     totop.classList.add("flex");
-  }else{
+  } else {
     navbar.classList.remove("sticky");
     totop.classList.remove("flex");
     totop.classList.add("hidden");
@@ -30,5 +30,18 @@ const darkToggle = document.querySelector("#dark-toggle");
 const html = document.querySelector("html");
 
 darkToggle.addEventListener("click", () => {
-    darkToggle.checked ? html.classList.add("dark") : html.classList.remove("dark");
+  if (darkToggle.checked) {
+    html.classList.add("dark");
+    localStorage.theme = "dark";
+  } else {
+    html.classList.remove("dark");
+    localStorage.theme = "light";
+  }
 });
+
+// toggle position
+if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  darkToggle.checked = true
+} else {
+  darkToggle.checked = false
+}
